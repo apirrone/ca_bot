@@ -155,15 +155,44 @@ def displayLeg(t1, t2, t3, L1, L2, L3):
     # displayArrow(vec3, [1, 0, 1])
     
     
-L1 = 2
+L1 = 2.5
 L2 = 3
 L3 = 2
 
+incr_step = 0.0005
+
+def incr_teta(t, t_boundaries, t_dir):
+    if t + t_dir*incr_step < t_boundaries[0] or t + t_dir*incr_step > t_boundaries[1]:
+        t_dir = -t_dir
+
+    t += t_dir*incr_step
+    return t, t_dir
+
+
+t1_boundaries = [0, np.pi]
+t2_boundaries = [np.pi/2, 3*np.pi/2]
+t3_boundaries = [0, np.pi]
+
+t1 = np.pi/2
+t1_dir = 1
+t2 = np.pi/2+0.001
+t2_dir = 1
+t3 = t3_boundaries[0]+0.0001
+t3_dir = -1
+
 def display():
+    global t1, t1_dir, t1_boundaries
+    global t2, t2_dir, t2_boundaries
+    global t3, t3_dir, t3_boundaries
+
+    # t1, t1_dir = incr_teta(t1, t1_boundaries, t1_dir)
+    t2, t2_dir = incr_teta(t2, t2_boundaries, t2_dir)
+    # t3, t3_dir = incr_teta(t3, t3_boundaries, t3_dir)
+    
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
     displayAxis([0, 0, 0])
 
-    displayLeg(np.pi/2, np.pi/2, -np.pi/2, L1, L2, L3)
+    displayLeg(t1, t2, t3, L1, L2, L3)
     
     # vec = [0., 0., 0., 1., 1., 0]
     # displayArrow(vec, [1, 0, 1])
