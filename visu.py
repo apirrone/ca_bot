@@ -139,14 +139,15 @@ def displayCylinder(pos, radius, height, color):
 def displayLeg(t1, t2, t3, L1, L2, L3):
 
     P1, P2, P3 = kinematics.fk(t1, t2, t3, L1, L2, L3)
-    
+    # print("fk : ", [round(P3[0], 2), round(P3[1], 2), round(P3[2], 2)])
+    # print("=============================")
     
     vec1 = [0, 0, 0] + P1
     vec2 = P1 + P2
     vec3 = P2 + P3
     displayArrow(vec1, [1, 0, 1])
-    displayArrow(vec2, [1, 0, 1])
-    displayArrow(vec3, [1, 0, 1])
+    # displayArrow(vec2, [1, 0, 1])
+    # displayArrow(vec3, [1, 0, 1])
     
     # vec2 = vec1[3:] + [vec1[3:][0], vec1[3:][1]+L2, vec1[3:][2]]
     # displayArrow(vec2, [1, 0, 1])
@@ -159,7 +160,7 @@ L1 = 2.5
 L2 = 3
 L3 = 2
 
-incr_step = 0.0005
+incr_step = 0.0001
 
 def incr_teta(t, t_boundaries, t_dir):
     if t + t_dir*incr_step < t_boundaries[0] or t + t_dir*incr_step > t_boundaries[1]:
@@ -177,21 +178,59 @@ t1 = np.pi/2
 t1_dir = 1
 t2 = np.pi/2+0.001
 t2_dir = 1
-t3 = t3_boundaries[0]+0.0001
+t3 = np.pi/2
 t3_dir = -1
 
+cartesian_step = 0.0005
+
+x = 2.5
+y = 3
+z = -2
 def display():
     global t1, t1_dir, t1_boundaries
     global t2, t2_dir, t2_boundaries
     global t3, t3_dir, t3_boundaries
-
+    global x, y, z
     # t1, t1_dir = incr_teta(t1, t1_boundaries, t1_dir)
-    t2, t2_dir = incr_teta(t2, t2_boundaries, t2_dir)
+    # t2, t2_dir = incr_teta(t2, t2_boundaries, t2_dir)
     # t3, t3_dir = incr_teta(t3, t3_boundaries, t3_dir)
     
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
     displayAxis([0, 0, 0])
 
+    if keyboard.is_pressed('g'):
+        t1, t1_dir = incr_teta(t1, t1_boundaries, t1_dir)
+        # t2, t2_dir = incr_teta(t2, t2_boundaries, t2_dir)
+        # t3, t3_dir = incr_teta(t3, t3_boundaries, t3_dir)
+
+    P1, P2, P3 = kinematics.fk(t1, t2, t3, L1, L2, L3)
+
+    # print("Command angular   : ", t1, t2, t3)
+    # print("Command cartesian : ", [round(x, 2), round(y, 2), round(z, 2)])
+    t1_tmp, t2_tmp, t3_tmp = kinematics.ik(P3[0], P3[2], P3[2], L1, L2, L3)
+    # print("IK : ", t1_tmp, t2_tmp, t3_tmp)
+    # print(t1_tmp)
+    print("t1 : ", round(t1*180/np.pi, 2), ", ik t1 : ", round(t1_tmp*180/np.pi, 2), ", diff : ", round(t1 - t1_tmp, 2)*180/np.pi)
+    # print("DIFF : ", round(t1 - t1_tmp, 2), round(t2 - t2_tmp, 2), round(t3 - t3_tmp, 2))
+    # print("============================================")
+    # if utils.is_between(t1_tmp, t1_boundaries) and utils.is_between(t2_tmp, t2_boundaries) and utils.is_between(t3_tmp, t3_boundaries):
+    #     pass
+        # print("coucou")
+        # t1 = t1_tmp
+        # t2 = t2_tmp
+        # t3 = t3_tmp
+        # x = x_tmp
+        # y = y_tmp
+        # z = z_tmp
+    # else:
+    #     print(t1_tmp, t2_tmp, t3_tmp)
+    #     print("OUT OF BOUNDS")
+
+        
+    
+    
+    # print(t3*180/np.pi)
+    
     displayLeg(t1, t2, t3, L1, L2, L3)
     
     # vec = [0., 0., 0., 1., 1., 0]

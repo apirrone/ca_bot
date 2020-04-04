@@ -81,3 +81,21 @@ def fk(t1, t2, t3, L1, L2, L3):
     return P1, P2, P3
 
     
+def ik(x, y, z, L1, L2, L3):
+
+    m = np.sqrt(x**2 + z**2)
+    a = np.sqrt(m**2 - L1**2)
+    delta = np.arccos(L1/m)
+    gamma = np.arccos(z/m)
+    t1 = delta + gamma
+    
+    w = np.sqrt(y**2 + z**2)
+    delta2 = np.arccos((-L3**2 + L2**2 + w**2)/(2*L2*w))
+    gamma2 = np.arccos(z/w)
+    t2 = gamma2 + delta2
+
+    t3 = np.arccos((-w**2 + L3**2 + L2**2)/(2*L3*L2))
+
+    return t1, t2, t3
+    
+    
