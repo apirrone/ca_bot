@@ -146,8 +146,8 @@ def displayLeg(t1, t2, t3, L1, L2, L3):
     vec2 = P1 + P2
     vec3 = P2 + P3
     displayArrow(vec1, [1, 0, 1])
-    # displayArrow(vec2, [1, 0, 1])
-    # displayArrow(vec3, [1, 0, 1])
+    displayArrow(vec2, [1, 0, 1])
+    displayArrow(vec3, [1, 0, 1])
     
     # vec2 = vec1[3:] + [vec1[3:][0], vec1[3:][1]+L2, vec1[3:][2]]
     # displayArrow(vec2, [1, 0, 1])
@@ -199,9 +199,9 @@ def display():
     displayAxis([0, 0, 0])
 
     if keyboard.is_pressed('g'):
-        t1, t1_dir = incr_teta(t1, t1_boundaries, t1_dir)
-        # t2, t2_dir = incr_teta(t2, t2_boundaries, t2_dir)
-        # t3, t3_dir = incr_teta(t3, t3_boundaries, t3_dir)
+        # t1, t1_dir = incr_teta(t1, t1_boundaries, t1_dir)
+        t2, t2_dir = incr_teta(t2, t2_boundaries, t2_dir)
+        t3, t3_dir = incr_teta(t3, t3_boundaries, t3_dir)
 
     P1, P2, P3 = kinematics.fk(t1, t2, t3, L1, L2, L3)
 
@@ -210,7 +210,7 @@ def display():
     t1_tmp, t2_tmp, t3_tmp = kinematics.ik(P3[0], P3[2], P3[2], L1, L2, L3)
     # print("IK : ", t1_tmp, t2_tmp, t3_tmp)
     # print(t1_tmp)
-    print("t1 : ", round(t1*180/np.pi, 2), ", ik t1 : ", round(t1_tmp*180/np.pi, 2), ", diff : ", round(t1 - t1_tmp, 2)*180/np.pi)
+    print("t2 : ", round(t2*180/np.pi, 2), ", ik t2 : ", round(t2_tmp*180/np.pi, 2), ", diff : ", round(t2 - t2_tmp, 2)*180/np.pi)
     # print("DIFF : ", round(t1 - t1_tmp, 2), round(t2 - t2_tmp, 2), round(t3 - t3_tmp, 2))
     # print("============================================")
     # if utils.is_between(t1_tmp, t1_boundaries) and utils.is_between(t2_tmp, t2_boundaries) and utils.is_between(t3_tmp, t3_boundaries):
