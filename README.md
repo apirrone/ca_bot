@@ -13,6 +13,12 @@ Follow the instructions to import the robot from OnShape. Then, you can use the 
 ## Kinematics
 (latex file with inverse kinematics explainations is coming)
 
+## BOM
+TODO
+
+## STL Files
+TODO (list of files, number of files to print etc)
+
 ## Sources utiles
 - https://forum.arduino.cc/index.php?topic=597809.0
 
