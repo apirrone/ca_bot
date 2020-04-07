@@ -1,4 +1,5 @@
 # Ca_bot
+
 ![There is supposed to be a cool gif here](ca_bot.gif)
 
 ## CAD
@@ -9,7 +10,9 @@ You can view the CAD on OnShape [here](https://cad.onshape.com/documents/ce9bda5
 I used [OnShape-to-robot](https://github.com/Rhoban/onshape-to-robot) and PyBullet to simulate the robot. 
 Follow the instructions to import the robot from OnShape. Then, you can use the `bullet.py` (in Ca_bot repo) to perform the simulation. It uses Onshape-to-robot's simulation.py, so you will have to link the imports yourself
 
-	
+## Kinematics
+(latex file with inverse kinematics explainations is coming)
+
 ## Sources utiles
 - https://forum.arduino.cc/index.php?topic=597809.0
 

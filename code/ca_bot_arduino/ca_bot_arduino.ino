@@ -1,4 +1,3 @@
-/* #include <Servo.h> */
 #include "dofs.h"
 #include "kinematics.h"
 
@@ -75,19 +74,6 @@ void setup() {
   enableDof(&back_left_thigh);
   enableDof(&back_left_leg);
 
-  
-  /* enableDof(&front_right_shoulder); */
-  /* enableDof(&ca_botfront_right_thigh); */
-  /* enableDof(&front_right_leg); */
-  
-  /* ik(initX, initY, initZ, L1, L2, L3, &t1, &t2, &t3); */
-
-  /* moveDof(&front_left_shoulder, t1); */
-  /* moveDof(&front_left_thigh, t2+(PI/2)-0.01); */
-  /* moveDof(&front_left_leg, t3); */
-    
-  
-
   /* tmp.attach(5); */
   /* tmp.write(90); */
   
@@ -97,8 +83,6 @@ void setup() {
 
 void loop() 
 {
-
-
 
   x += 0.3*directionX;
   if (x < -30 || x > 30){
