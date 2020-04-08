@@ -58,21 +58,21 @@ void setup() {
   initDof(&back_left_thigh, 12, 90, 0, 180);
   initDof(&back_left_leg, 13, 90, 60, 140);
   
-  enableDof(&front_left_shoulder);
-  enableDof(&front_left_thigh);
-  enableDof(&front_left_leg);
+  /* enableDof(&front_left_shoulder); */
+  /* enableDof(&front_left_thigh); */
+  /* enableDof(&front_left_leg); */
   
-  enableDof(&front_right_shoulder);
-  enableDof(&front_right_thigh);
-  enableDof(&front_right_leg);
+  /* enableDof(&front_right_shoulder); */
+  /* enableDof(&front_right_thigh); */
+  /* enableDof(&front_right_leg); */
   
-  enableDof(&back_right_shoulder);
-  enableDof(&back_right_thigh);
-  enableDof(&back_right_leg);
+  /* enableDof(&back_right_shoulder); */
+  /* enableDof(&back_right_thigh); */
+  /* enableDof(&back_right_leg); */
   
-  enableDof(&back_left_shoulder);
-  enableDof(&back_left_thigh);
-  enableDof(&back_left_leg);
+  /* enableDof(&back_left_shoulder); */
+  /* enableDof(&back_left_thigh); */
+  /* enableDof(&back_left_leg); */
 
   /* tmp.attach(5); */
   /* tmp.write(90); */

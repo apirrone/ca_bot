@@ -19,4 +19,4 @@ def ik(x, y, z, L1, L2, L3):
 
     t3 = np.arccos((-m**2 + L2**2 + L3**2)/(2*L2*L3))
     
-    return t1, t2, t3
+    return (t1, t2, t3)
