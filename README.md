@@ -13,7 +13,7 @@ I used [OnShape-to-robot](https://github.com/Rhoban/onshape-to-robot) and PyBull
 Follow the instructions to import the robot from OnShape. Then, you can use the `bullet.py` (in Ca_bot repo) to perform the simulation. It uses Onshape-to-robot's simulation.py, so you will have to link the imports yourself
 
 ## Kinematics
-(latex file with inverse kinematics explainations is coming)
+You can look at the file maths/inverse_kinematics.pdf for an explaination.
 
 ## BOM
 TODO
