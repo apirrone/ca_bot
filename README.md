@@ -8,10 +8,18 @@ You can view the CAD on OnShape [here](https://cad.onshape.com/documents/ce9bda5
 ## Simulation
 
 I used [OnShape-to-robot](https://github.com/Rhoban/onshape-to-robot) and PyBullet to simulate the robot. 
-Follow the instructions to import the robot from OnShape. Then, you can use the `bullet.py` (in Ca_bot repo) to perform the simulation. It uses Onshape-to-robot's simulation.py, so you will have to link the imports yourself
+Follow the instructions to import the robot from OnShape. Then, you can use the `bullet.py` (in Ca_bot repo) to perform the simulation. It uses Onshape-to-robot's simulation.py, so you will have to link the import. For instance, in `code/`, you can add three symbolic links : 
+
+```
+	$ ln -sf <path_to_onshape-to-robot_bullet_dir> bullet
+	$ ln -sf <path_to_onshape-to-robot_robots_dir> robots
+	$ ln -sf <path_to_onshape-to-robot_simulation.py> simulation.py
+
+```
+
 
 ## Kinematics
-You can look at the file maths/inverse_kinematics.pdf for an explaination.
+You can look at the file `maths/inverse_kinematics.pdf` for an explaination.
 
 ## BOM
 TODO
