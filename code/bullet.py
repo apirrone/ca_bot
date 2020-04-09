@@ -16,7 +16,7 @@ if len(sys.argv) > 1:
 sim = Simulation(directory)
 
 params = p.getDebugVisualizerCamera()
-p.resetDebugVisualizerCamera(params[10]-4.6, params[8]-4.6, params[9]-4.6, [0, 0.3, 0])
+p.resetDebugVisualizerCamera(params[10]-4.5, params[8]-4.5, params[9]-4.5, [0, 0.2, 0])
 
 controls = {}
 for name in sim.getJoints():
@@ -88,7 +88,7 @@ fr_z_spline.set_phase_shift(0.75)
 
 
 
-speed = 3 # (the closer to one, the faster)
+speed = 2 # (the closer to one, the faster)
 while True:
     
     splineTick = (sim.t%speed)/speed

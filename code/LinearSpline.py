@@ -35,6 +35,7 @@ class LinearSpline:
                         break
                     
                     point1 = (k, v)
+                    
                 a = (point2[1] - point1[1]) / (point2[0] - point1[0])
                 b = point2[1] - a*point2[0]
 
