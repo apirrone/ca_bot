@@ -14,7 +14,6 @@ Follow the instructions to import the robot from OnShape. Then, you can use the 
 	$ ln -sf <path_to_onshape-to-robot_bullet_dir> bullet
 	$ ln -sf <path_to_onshape-to-robot_robots_dir> robots
 	$ ln -sf <path_to_onshape-to-robot_simulation.py> simulation.py
-
 ```
 
 
