@@ -27,7 +27,7 @@ float initZ = L3;
 
 Servo tmp;
 float x = 0;
-float y = 0;
+float y = -40;
 /* float z = 0; */
 /* float y = -70; //-150 */
 /* float z = 20; //30 */
@@ -84,10 +84,10 @@ void setup() {
 void loop() 
 {
 
-  x += 0.3*directionX;
-  if (x < -30 || x > 30){
-    directionX = - directionX;
-  }
+  /* x += 0.3*directionX; */
+  /* if (x < -30 || x > 30){ */
+  /*   directionX = - directionX; */
+  /* } */
 
   /* y += 0.2*directionY; */
   /* if (y < -30 || y >= 0){ */
@@ -109,13 +109,13 @@ void loop()
   moveDof(&front_left_leg, (PI-t3+0.01));
 
   /* Serial.println((t12)*180/PI); */
-  moveDof(&front_right_shoulder, t12+0.28); // validé
+  moveDof(&front_right_shoulder, t12+0.2); // validé
   moveDof(&front_right_thigh, (PI-t22)-(PI/2 - 0.28)-0.01);//validé
-  moveDof(&front_right_leg, t32); // validé
+  moveDof(&front_right_leg, t32-0.1); // validé
 
   moveDof(&back_left_shoulder, (PI-t1)+0.1);
-  moveDof(&back_left_thigh, t2+(PI/2)-0.01);
-  moveDof(&back_left_leg, (PI-t3+0.01));
+  moveDof(&back_left_thigh, t2+(PI/2));
+  moveDof(&back_left_leg, (PI-t3+0.01)-0.1);
   
   moveDof(&back_right_shoulder, (PI-t12)-0.1);
   moveDof(&back_right_thigh, (PI-t22)-(PI/2 - 0.28));
