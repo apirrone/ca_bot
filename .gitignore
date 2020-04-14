@@ -2,4 +2,5 @@ code/simulation_code/__pycache__/
 code/simulation_code/bullet
 code/simulation_code/simulation.py
 code/simulation_code/robots
+code/maple_mini_code/build/*
 *.xcf
