@@ -37,10 +37,11 @@ TODO
 ## Funny Gifs
 ![There is supposed to be a cool gif here](images/ca_bot.gif)
 ![There is supposed to be a cool gif here](images/round_walk.gif)
+![There is supposed to be a cool gif here](images/smooth_walk.gif)
 
 ## Sources utiles
 - https://forum.arduino.cc/index.php?topic=597809.0
-
+- https://github.com/rhoban/Maple
 
 
 
