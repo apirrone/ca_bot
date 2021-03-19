@@ -2,6 +2,8 @@
 
 ![Ca_bot cao](images/CAO.png)
 
+This work is not finished, I will work on it when I have some free time :)
+
 ## CAD
 You can view the CAD on OnShape [here](https://cad.onshape.com/documents/ce9bda5ae462e3fdef104bd6/w/3b8d4f6b6a3cb61aacb198cc/e/690f3e74afa6e9599cd381d0)
 ### TODO
