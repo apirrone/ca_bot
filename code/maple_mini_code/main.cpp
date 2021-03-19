@@ -1,5 +1,3 @@
-#ifndef ENABLE_DXL
-#define ENABLE_DXL
 
 #include <stdlib.h>
 #include <wirish/wirish.h>
@@ -23,20 +21,20 @@ void setup() {
   
   terminal_init(&SerialUSB);
   angle = 0;
-  aze = servos_register(3, (char*)"aze");
   servos_init();
-  servos_enable(aze);
-  
+  aze = servos_register(3, (char*)"aze");
+
+  servos_enable_all();
+  // servos_enable(aze);
+  // servos_reset(aze);
 }
 
 /**
  * Loop function
  */
 void loop() {
-  
-
+  // terminal_io()->println(servos_count());
   servos_command(aze, angle);
+  // servos_flush();
   terminal_tick();
 }
-
-#endif
